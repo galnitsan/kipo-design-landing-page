@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css?family=Assistant&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Assistant";
+  background: #eeeeee;
+  font-size: 18px;
+  height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+
+  .logo {
+    width: 200px;
+  }
+
+  h1 {
+    margin: 1em 0;
+  }
+
+  p {
+    line-height: 1.7rem;
+  }
+
+  .right {
+    padding: 1em;
+  }
+
+  .left {
+    background: #68aa2f;
+    //background: linear-gradient(160deg, #00b300 0%, #68aa2f 100%);
+    p,
+    h3 {
+      color: white;
+    }
+  }
+
+  .left p {
+    margin: 2em 0 1em;
+  }
+
+  .light {
+    color: #00b300 !important;
+    margin-top: 2em;
+  }
+
+  input,
+  button {
+    width: calc(100% - 3em);
+    padding: 0.5em;
+    font-size: 1.3rem;
+    outline: none;
+    margin: 1em;
+  }
+  button {
+    width: calc(100% - 2em);
+    margin: 0;
+    color: #00b300;
+    border: none;
+    cursor: pointer;
+    background: white;
+  }
+  input::-webkit-input-placeholder {
+    color: white;
+  }
+  input:-moz-placeholder {
+    color: white;
+  }
+
+  input {
+    background: #68aa2f;
+    border: thin solid #eeeeee;
+  }
+}
+
+.attention {
+  width: 100%;
+  margin: 0.5em auto 0;
+  text-align: center;
+
+  .me {
+    margin-top: 2em;
+    width: 4em;
+    border-radius: 50%;
+    margin-bottom: 3em;
+    margin-right: -300px;
+  }
+
+  .arrow {
+    width: 15em;
+    margin-right: -40px;
+    margin-bottom: 40px;
+  }
+}
+
+#success {
+    display: none;
+}
+
+.fadeout {
+    animation: fadeout 1s forwards;
+}
+
+.fadein {
+    animation: fadein 1s forwards;
+    display: block !important;
+    margin-top: 40%;
+}
+
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        display: block;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+  button {
+    width: 60% !important;
+  }
+  input {
+    width: calc(60% - 1em) !important;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .logo {
+    margin: 1em 0;
+  }
+  p {
+    line-height: 1.7em !important;
+  }
+  .inner {
+    display: grid;
+    grid-template-columns: auto 55%;
+
+    .right {
+      text-align: right;
+      padding: 0 2em;
+      height: 100vh;
+      display: grid;
+
+      .content {
+        padding: 0 3em;
+      }
+      h1 {
+        margin: 0;
+        font-size: 2.8em;
+
+        span {
+          display: block;
+        }
+      }
+    }
+    .left {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      align-self: center;
+      justify-self: center;
+
+      .input {
+        width: calc(100% - 2em) !important;
+        margin: 1em 0;
+      }
+
+      .button {
+        margin: 1em 0;
+        background-color: white;
+        color: #00b300;
+      }
+
+      h3 {
+        margin-top: 30vh;
+      }
+    }
+  }
+
+  .proto-container {
+      clip-path: inset(0 0 0 45%);
+      position: absolute;
+      top: 20%;
+      height: 70%;
+      z-index: 0;
+      width: 100%;
+      pointer-events: none;
+
+      .proto {
+          border: 5px solid rgba(104, 170, 47, .1);
+          width: 19%;   
+          height: 80%;
+          float: right;
+          margin-right: 1em;
+          transform: translateX(10%);
+          //transform: translateY(10%);
+
+      }
+  }
+}

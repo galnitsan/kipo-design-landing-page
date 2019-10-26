@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body dir="rtl">
+    <div class="proto-container">
+      <div class="proto"></div>
+      <div class="proto"></div>
+      <div class="proto"></div>
+      <div class="proto"></div>
+    </div>
+
+    <div class="container">
+      <div class="inner">
+
+        <!-- Right side of landing page -->
+        <div class="right">
+          <img
+            src="images/LOGO-SOLO600px.png"
+            alt="CompleteUI Logo"
+            class="logo"
+          />
+
+          <div class="content">
+            <h1>רותם בן יהודה <span>קיפו דיזיין - עיצוב תעשייתי</span></h1>
+            <p>
+              סטודיו מקצועי המתמחה בעיצוב תנועתי בקטגוריות כגון:
+              <br />
+              תעשיית הרכב, מוצרי רחיפה ומוצרים תנועתיים אורבנים נטענים.
+              <br />
+              -- פתרונות בנושאים שונים, שירות מצוין ויחס אישי --
+            </p>
+            <h3 class="light">צרו קשר עכשיו וקבלו פגישת ייעוץ בחינם</h3>
+          </div>
+        </div>
+
+         <!-- Left side of landing page -->
+        <div dir="rtl" class="left">
+          <div id="signup" class="inner-form">
+            <h3 dir="rtl">דברו איתי, אשמח להכירכם כבר היום!</h3>
+            <form 
+              id="gform"
+              method="POST"
+              action="*** Your Server Link or Setup ***">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="שם מלא"
+                required
+                title="אנא הכנס שם מלא"
+              />
+              <br />
+
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="דואר אלקטרוני"
+                required
+                title="אנא הכנס כתובת אימייל תקינה"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              />
+              <br />
+
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="טלפון xxx-xxxxxxx"
+                required
+                title="אנא הכנס מספר טלפון בפורמט xxx-xxxxxxx"
+                pattern="[0-9]{3}-[0-9]{7}"
+              />
+              <input
+                type="submit"
+                value="צור קשר עכשיו"
+                class="button"
+                id="cta"
+              />
+            </form>
+          
+          <div class="attention">
+            <img
+              src="images/rotem3.jpg"
+              alt="Rotem Ben Yehuda avatar"
+              class="me"
+            />
+            <img
+              src="images/arrow3.png"
+              alt="Arrow pointing to client details"
+              class="arrow"
+            />
+            </div>
+            </div>
+             <div id="success" class="inner-form">
+               <h2>תודה שמסרת את פרטיך,</h2>
+               <h4>אחזור אלייך בהקדם האפשרי</h4>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script data-cfasync="false">
+      
+      // form submission
+       let cta = document.getElementById("cta");
+      let email = document.getElementById("email");
+      let success = document.getElementById("success");
+      let signup = document.getElementById("signup");
+      let name = document.getElementById("name");
+      let phone = document.getElementById("phone");
+
+      // Thank you animation after form submission
+      cta.addEventListener('click', (event) =>{
+        if (name.checkValidity() & email.checkValidity() & phone.checkValidity()){
+
+        signup.classList.add('fadeout');
+        setTimeout(() => {
+          success.classList.add('fadein');
+          signup.style.display = 'none';
+        }, 1000)
+       }
+      }) 
+
+      // parallax effect of right side of landing page
+      let right = document.querySelector(".right");
+      let content = document.querySelector(".content");
+      let protos = document.querySelectorAll(".proto");
+
+      right.addEventListener("mousemove", event => {
+        let move = event.clientX * 0.05 + 4;
+        let move2 = event.clientX * 0.003;
+        content.style.transform = `translateX(-${move2}%)`;
+
+        protos.forEach(proto => {
+          proto.style.transform = `translateX(${move}%)`;
+        });
+      });
+    </script>
+  </body>
+</html>
