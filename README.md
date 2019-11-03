@@ -1,4 +1,5 @@
 # kipo-design-landing-page
+![Screenshot](kipo-screenshot.PNG)
 
  Responsive Landing page for Kipo-Design - Industrial Designer. 
 
